@@ -36,7 +36,7 @@ const Form = ({ handleSubmit, customerID, status }) => {
         onChangeText={(v) => setFormField("lastName", v)}
       />
       <View>
-        <Text>Active: </Text>
+        <Text>Notifications: </Text>
         <Switch setFormField={setFormField} />
       </View>
       <DropdownComponent setFormField={setFormField} />

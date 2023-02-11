@@ -13,7 +13,7 @@ const ShowCustomer = ({ item }) => {
         <Text key={"id"}>ID: {item.id}</Text>
         <Text key={"fn"}>First Name: {item.firstName}</Text>
         <Text key={"ln"}>Last Name: {item.lastName}</Text>
-        <Text key={"ac"}>Active: {item.active ? "True" : "False"}</Text>
+        <Text key={"ac"}>Notifications: {item.active ? "True" : "False"}</Text>
         <Text key={"re"}>Region: {item.region}</Text>
       </View>
     </TouchableOpacity>
