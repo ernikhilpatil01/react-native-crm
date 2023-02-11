@@ -8,7 +8,7 @@ const styles = () => {
       borderRadius: 16,
       backgroundColor: "#007373",
       alignSelf: "center",
-      display: "flex",
+      display: "flexbox",
       justifyContent: "center",
       alignItems: "center",
       paddingTop: 10,
