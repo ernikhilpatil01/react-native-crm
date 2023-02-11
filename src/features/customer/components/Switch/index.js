@@ -5,8 +5,6 @@ import styles from "./styles";
 const SwitchField = ({ setFormField }) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = (e) => {
-    console.log("toggle: ", e);
-
     setIsEnabled(e);
     setFormField("active", e);
   };

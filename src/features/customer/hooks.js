@@ -8,12 +8,12 @@ export const useUpdateFields = (customerID = null) => {
   const status = useSelector((state) => state.customer.edit.status);
   const fields = useSelector((state) => state.customer.form.fields);
 
-  console.log(
-    "customer ID ::: ",
-    customerID,
-    status,
-    customerID && status !== INPROGRESS
-  );
+  // console.log(
+  //   "customer ID ::: ",
+  //   customerID,
+  //   status,
+  //   customerID && status !== INPROGRESS
+  // );
 
   useEffect(() => {
     if (customerID && status === PENDING) {

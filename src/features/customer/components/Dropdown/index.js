@@ -7,7 +7,6 @@ import { regions } from "../../../../utils/helpers";
 const DropdownComponent = ({ setFormField }) => {
   const [value, setValue] = useState(null);
   const [isFocus, setIsFocus] = useState(false);
-  console.log("sel value: ", value);
 
   const renderLabel = () => {
     if (value || isFocus) {

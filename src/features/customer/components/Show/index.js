@@ -5,8 +5,6 @@ import { useNavigation } from "@react-navigation/native";
 const ShowCustomer = ({ item }) => {
   const { navigate } = useNavigation();
 
-  console.log("item: ", item);
-
   return (
     <TouchableOpacity
       onPress={() => navigate("Edit Customer", { customerID: item.id })}
