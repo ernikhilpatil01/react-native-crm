@@ -1,42 +1,43 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import WelcomeScreen from "../screens/welcome/WelcomeScreen";
-import RegionsScreen from "../screens/region/index";
-import EditScreen from "../screens/customer/EditScreen";
-import ListScreen from "../screens/customer/ListScreen";
-import NewScreen from "../screens/customer/NewScreen";
-import { useListCustomers } from "../features/components/customer/hooks";
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-const Stack = createNativeStackNavigator();
+import WelcomeScreen from '../screens/welcome'
+import RegionsScreen from '../screens/regions'
+import EditCustomer from '../screens/customer/Edit'
+import CustomersList from '../screens/customer/List'
+import AddCustomer from '../screens/customer/New'
+import { useListCustomers } from '../features/components/customer/hooks'
+
+const Stack = createNativeStackNavigator()
 
 const Navigation = () => {
-    useListCustomers();
+    useListCustomers()
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName={"Welcome"}>
+            <Stack.Navigator initialRouteName={'Welcome'}>
                 <Stack.Screen
-                    name="Welcome"
+                    name='Welcome'
                     component={WelcomeScreen}
                 />
                 <Stack.Screen
-                    name="Regions"
+                    name='Regions'
                     component={RegionsScreen}
                 />
                 <Stack.Screen
-                    name="Add Customer"
-                    component={NewScreen}
+                    name='Add Customer'
+                    component={AddCustomer}
                 />
                 <Stack.Screen
-                    name="Edit Customer"
-                    component={EditScreen}
+                    name='Edit Customer'
+                    component={EditCustomer}
                 />
                 <Stack.Screen
-                    name="Customers"
-                    component={ListScreen}
+                    name='Customers'
+                    component={CustomersList}
                 />
             </Stack.Navigator>
         </NavigationContainer>
-    );
-};
+    )
+}
 
-export default Navigation;
+export default Navigation

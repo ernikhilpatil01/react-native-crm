@@ -1,15 +1,15 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native'
 
 const stylesFn = ({ disabled = false }) => {
-  let backgroundColor;
-  let color;
+  let backgroundColor
+  let color
 
   if(disabled) {
-    backgroundColor = "grey";
-    color = "black";
+    backgroundColor = 'grey'
+    color = 'black'
   } else {
-    backgroundColor = "#063970";
-    color = "white";
+    backgroundColor = '#063970'
+    color = 'white'
   }
 
   return StyleSheet.create({
@@ -19,14 +19,14 @@ const stylesFn = ({ disabled = false }) => {
       borderRadius: 6,
       margin: 10,
       backgroundColor: backgroundColor,
-      justifyContent: "center",
-      alignItems: "center",
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     text: {
       color: color,
-      fontFamily: "monospace",
+      fontFamily: 'monospace',
     }
   })
 };
 
-export default stylesFn;
+export default stylesFn

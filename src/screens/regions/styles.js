@@ -7,7 +7,11 @@ const stylesFn = () => {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-    }
+    },
+    text: {
+      fontSize: 40,
+      textAlign: 'center',
+    },
   });
 }
 

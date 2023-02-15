@@ -1,9 +1,13 @@
-import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
-import stylesFn from "./styles";
+import React from 'react'
+import {
+    Text,
+    TouchableOpacity,
+    View,
+} from 'react-native'
+import stylesFn from './styles'
 
 const Button = ({ onPress, text, disabled }) => {
-    const styles = stylesFn({disabled: disabled});
+    const styles = stylesFn({disabled: disabled})
 
     return (
         <TouchableOpacity
@@ -16,7 +20,6 @@ const Button = ({ onPress, text, disabled }) => {
                 </Text>
             </View>
         </TouchableOpacity>
-    );
-};
-
-export default Button;
+    )
+}
+export default Button

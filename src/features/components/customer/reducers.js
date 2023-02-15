@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { PENDING, REQUESTING, SUCCESS, ERROR, REGIONS } from "../../../utils/helpers";
+import { createSlice } from '@reduxjs/toolkit'
+import { PENDING, INPROGRESS, REQUESTING, SUCCESS, ERROR, REGIONS } from '../../../utils/helpers'
 
-const name = "customer";
+const name = 'customer'
 
 const initialState = {
     list: {
@@ -19,13 +19,13 @@ const initialState = {
             first_name: null,
             last_name: null,
             active: false,
-            region: REGIONS[0].value,
+            region: REGIONS[0].id,
         },
     },
     error: {
-        message: ""
+        message: ''
     },
-};
+}
 
 const reducers = {
     createCustomer: (state) => {
@@ -71,13 +71,13 @@ const reducers = {
     setFormField: (state, { payload }) => {
         const current = state.form.fields
         const { field, value } = payload
-        console.log("payload:", payload);
+        console.log('payload:', payload);
 
         const fields = {
             ...current,
             [field]: value,
         }
-        console.log("fields:", fields);
+        console.log('fields:', fields);
         state.form.fields = fields
     },
     loadCustomers: (state) => {
@@ -86,13 +86,13 @@ const reducers = {
     loadResult: (state, { payload }) => {
         state.list.customers = payload
     },
-};
+}
 
 const slice = createSlice({
     name,
     initialState,
     reducers,
-});
+})
 
 export const {
     createCustomer,
@@ -106,6 +106,6 @@ export const {
     setFormField,
     loadCustomers,
     loadResult,
-} = slice.actions;
+} = slice.actions
 
-export default slice.reducer;
+export default slice.reducer

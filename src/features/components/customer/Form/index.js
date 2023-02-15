@@ -1,17 +1,18 @@
-import React,{ useEffect } from "react";
-import { useNavigation } from "@react-navigation/native";
-import { View, Text, TextInput, Switch } from "react-native";
-import { Picker } from "@react-native-picker/picker";
-import { useUpdateFields } from "../hooks";
-import { PENDING, INPROGRESS, REGIONS } from "../../../../utils/helpers";
-import Button from "../../../../components/Button";
-import formStyles from "./styles";
-import Remainder from "../../remainder/remainder";
+import React from 'react'
+import { useEffect } from 'react'
+import { useNavigation } from '@react-navigation/native'
+import { View, Text, TextInput, TouchableOpacity, Switch } from 'react-native'
+import { Picker } from '@react-native-picker/picker'
+import { useUpdateFields } from '../hooks'
+import { PENDING, INPROGRESS, REQUESTING, SUCCESS, ERROR, REGIONS } from '../../../../utils/helpers'
+import Button from '../../../../components/Button'
+import formStyles from './styles'
+import Remainder from '../../remainder/remainder'
 
 const Form = ({ handleSubmit, status, customerID, propRegion }) => {
-  const styles = formStyles();
-  const { navigate } = useNavigation();
-  const { fields, setFormField } = useUpdateFields(customerID);
+  const styles = formStyles()
+  const { navigate } = useNavigation()
+  const { fields, setFormField } = useUpdateFields(customerID)
 
   const {
     first_name,
@@ -36,21 +37,21 @@ const Form = ({ handleSubmit, status, customerID, propRegion }) => {
     <View style={styles.container}>
 
       <TextInput
-        key={"first_name"}
-        placeholder={first_name || "First Name"}
-        value={first_name || ""}
+        key={'first_name'}
+        placeholder={first_name || 'First Name'}
+        value={first_name || ''}
         style={styles.input}
-        onChangeText={v => setFormField("first_name", v)}
+        onChangeText={v => setFormField('first_name', v)}
       />
 
-      <View style={{ height: 15, width: "100%" }}></View>
+      <View style={{ height: 15, width: '100%' }}></View>
 
       <TextInput
-        key={"last_name"}
-        placeholder={last_name || "Last Name"}
-        value={last_name || ""}
+        key={'last_name'}
+        placeholder={last_name || 'Last Name'}
+        value={last_name || ''}
         style={styles.input}
-        onChangeText={v => setFormField("last_name", v)}
+        onChangeText={v => setFormField('last_name', v)}
       />
       
       <Text>Active:</Text>
@@ -77,7 +78,7 @@ const Form = ({ handleSubmit, status, customerID, propRegion }) => {
       <View style={styles.viewButton}>
         <Button
           onPress={onSubmit}
-          text="Submit"
+          text='Submit'
           disabled={(status !== PENDING && status !== INPROGRESS) || !first_name || !last_name}
         />
         {
@@ -90,7 +91,7 @@ const Form = ({ handleSubmit, status, customerID, propRegion }) => {
       </View>
 
     </View>
-  );
-};
+  )
+}
 
-export default Form;
+export default Form

@@ -1,7 +1,7 @@
 const styles = () => {
   return {
     container: {
-      margin: "5%",
+      margin: '5%',
     },
     picker: {
       height: 50,
@@ -10,18 +10,18 @@ const styles = () => {
       height: 50,
     },
     viewButton:{
-      alignItems: "center",
+      alignItems: 'center',
     },
     input: {
       borderWidth: 1,
-      borderColor: "black",
+      borderColor: 'black',
       borderRadius: 4,
       padding: 15,
     },
     error: {
-      color: "red",
+      color: 'red',
     }
   }
 };
 
-export default styles;
+export default styles
