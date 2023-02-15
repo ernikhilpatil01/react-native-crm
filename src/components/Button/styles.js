@@ -1,23 +1,32 @@
-const styles = () => {
-  return {
+import { StyleSheet } from "react-native";
+
+const stylesFn = ({ disabled = false }) => {
+  let backgroundColor;
+  let color;
+
+  if(disabled) {
+    backgroundColor = "grey";
+    color = "black";
+  } else {
+    backgroundColor = "#063970";
+    color = "white";
+  }
+
+  return StyleSheet.create({
     button: {
-      marginTop: "5%",
-      height: 36,
-      width: "60%",
-      border: "1px solid #014949",
-      borderRadius: 16,
-      backgroundColor: "#007373",
-      alignSelf: "center",
-      display: "flexbox",
+      width: 250,
+      height: 40,
+      borderRadius: 6,
+      margin: 10,
+      backgroundColor: backgroundColor,
       justifyContent: "center",
       alignItems: "center",
-      paddingTop: 10,
-      paddingBottom: 10,
     },
     text: {
-      color: "#fff",
-    },
-  };
+      color: color,
+      fontFamily: "monospace",
+    }
+  })
 };
 
-export default styles;
+export default stylesFn;

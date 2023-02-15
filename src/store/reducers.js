@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import customer from "../features/customer/reducers";
+import customer from "../features/components/customer/reducers";
 
 const rootReducer = combineReducers({
   customer,

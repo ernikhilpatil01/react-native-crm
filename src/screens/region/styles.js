@@ -4,13 +4,14 @@ const stylesFn = () => {
 
   return StyleSheet.create({
     container: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
     },
     text: {
-      fontSize: 30,
-    }
+      fontSize: 40,
+      textAlign: "center",
+    },
   });
 }
 
