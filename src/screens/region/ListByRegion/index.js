@@ -3,12 +3,16 @@ import { SafeAreaView, ScrollView } from "react-native";
 import List from "../../../features/customer/components/List";
 import styles from "./styles";
 
-const ListByRegion = () => (
+const ListByRegion = ({route}) => {
+  const {region} = route && route.params;
+  
+  return(
   <SafeAreaView style={styles.view}>
     <ScrollView>
-      <List />
+      <List text={region}/>
     </ScrollView>
   </SafeAreaView>
 );
+  }
 
 export default ListByRegion;

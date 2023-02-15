@@ -1,15 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PENDING, INPROGRESS } from "../../utils/helpers";
 import * as actions from "./reducers";
 
 export const useUpdateFields = (customerID = null) => {
   const dispatch = useDispatch();
+  const [isnew, setIsNew] = useState(true);
   const status = useSelector((state) => state.customer.edit.status);
-  const fields = useSelector((state) => state.customer.form.fields);
-
-
-  useEffect(() => {
+  let fields;
+  if (customerID !== null)
+    fields = useSelector((state) => state.customer.form.fields);
+  else{
+    fields = isnew ? "" : useSelector((state) => state.customer.form.fields)
+    isnew && setIsNew((isnew)=> !isnew);
+  }
+    useEffect(() => {
     if (customerID && status === PENDING) {
       dispatch(actions.setForm(customerID));
     }

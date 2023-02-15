@@ -27,7 +27,9 @@
     "react-native-web": "~0.18.7",
     "react-redux": "^8.0.4",
     "redux-saga": "^1.2.1",
-    "undefined": "@react-navigation/native-stack^6.2.5"
+    "undefined": "@react-navigation/native-stack^6.2.5",
+    "expo-notifications": "~0.16.1",
+    "expo-device": "~4.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

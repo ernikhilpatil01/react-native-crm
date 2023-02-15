@@ -11,7 +11,7 @@ const ListRegions = () => {
   const renderRegions = ({ item }) => (
     <View>
       <Button
-        onPress={() => navigation.navigate("List by Region")}
+        onPress={() => navigation.navigate("List by Region", {region: item.label})}
         text={item.label}
       />
     </View>

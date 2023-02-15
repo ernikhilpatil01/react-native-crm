@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { View, Switch } from "react-native";
 import styles from "./styles";
 
-const SwitchField = ({ setFormField }) => {
-  const [isEnabled, setIsEnabled] = useState(false);
+const SwitchField = ({ setFormField, active }) => {
+  const [isEnabled, setIsEnabled] = useState(active);
   const toggleSwitch = (e) => {
     setIsEnabled(e);
     setFormField("active", e);

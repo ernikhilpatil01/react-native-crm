@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Text, View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
 import { styles } from "./styles";
 import { regions } from "../../../../utils/helpers";
 
-const DropdownComponent = ({ setFormField }) => {
-  const [value, setValue] = useState(null);
-  const [isFocus, setIsFocus] = useState(false);
+const DropdownComponent = ({ setFormField, region }) => {
+  const [value, setValue] = useState(region);
+  const [isFocus, setIsFocus] = useState(false); 
 
   const renderLabel = () => {
     if (value || isFocus) {
@@ -39,7 +39,7 @@ const DropdownComponent = ({ setFormField }) => {
         maxHeight={300}
         labelField="label"
         valueField="value"
-        placeholder={!isFocus ? "Select region" : "..."}
+        placeholder={region || "Select Region"}
         searchPlaceholder="Search..."
         value={value}
         onFocus={() => setIsFocus(true)}

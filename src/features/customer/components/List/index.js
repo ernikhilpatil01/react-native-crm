@@ -5,17 +5,20 @@ import { useListCustomers } from "../../hooks";
 import ShowCustomer from "../Show";
 import Button from "../../../../components/Button";
 
-const List = () => {
+const List = ({text}) => {
   const { navigate } = useNavigation();
   const customers = useListCustomers();
-
+  let custByRegions = [];
+  
+  text !==null && customers !== null ? custByRegions = customers.filter((cust)=> cust.region == text) : customers;
+  
   return (
     <View>
       <Text>Customers List</Text>
 
-      {customers && customers.length > 0 ? (
+      {custByRegions && custByRegions.length > 0 ? (
         <FlatList
-          data={customers || []}
+          data={custByRegions || []}
           renderItem={(props) => <ShowCustomer {...props} />}
           keyExtractor={(item) => item.id}
         />
